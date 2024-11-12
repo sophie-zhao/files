@@ -1,0 +1,117 @@
+goos: linux
+goarch: loong64
+pkg: test/bench/go1
+cpu: Loongson-3A5000 @ 2500.00MHz
+                      | this CL v4  |             this CL v2             |
+                      |   sec/op    |   sec/op     vs base               |
+BinaryTree17             5.681 ± 1%    5.664 ± 1%       ~ (p=0.221 n=20)
+Fannkuch11               3.286 ± 1%    3.230 ± 0%  -1.71% (p=0.000 n=20)
+FmtFprintfEmpty         62.68n ± 0%   62.68n ± 0%       ~ (p=0.362 n=20)
+FmtFprintfString        94.58n ± 0%   94.23n ± 0%  -0.36% (p=0.001 n=20)
+FmtFprintfInt           106.6n ± 0%   104.7n ± 1%  -1.74% (p=0.000 n=20)
+FmtFprintfIntInt        155.4n ± 0%   159.4n ± 0%  +2.57% (p=0.000 n=20)
+FmtFprintfPrefixedInt   198.1n ± 0%   197.7n ± 0%  -0.20% (p=0.023 n=20)
+FmtFprintfFloat         244.9n ± 0%   255.4n ± 0%  +4.29% (p=0.000 n=20)
+FmtManyArgs             588.7n ± 0%   612.0n ± 0%  +3.97% (p=0.000 n=20)
+GobDecode               7.702m ± 1%   7.713m ± 0%       ~ (p=0.155 n=20)
+GobEncode               4.665m ± 0%   4.685m ± 0%  +0.41% (p=0.001 n=20)
+Gzip                    382.7m ± 0%   387.7m ± 0%  +1.31% (p=0.000 n=20)
+Gunzip                  55.22m ± 0%   55.38m ± 0%  +0.30% (p=0.000 n=20)
+HTTPClientServer        82.11µ ± 0%   83.13µ ± 0%  +1.25% (p=0.000 n=20)
+JSONEncode              10.44m ± 1%   10.50m ± 2%       ~ (p=0.096 n=20)
+JSONDecode              61.32m ± 0%   58.67m ± 0%  -4.32% (p=0.000 n=20)
+Mandelbrot200           6.476m ± 0%   6.476m ± 0%       ~ (p=0.925 n=20)
+GoParse                 4.846m ± 3%   4.858m ± 3%       ~ (p=0.351 n=20)
+RegexpMatchEasy0_32     97.73n ± 0%   98.93n ± 0%  +1.23% (p=0.000 n=20)
+RegexpMatchEasy0_1K     1.114µ ± 0%   1.113µ ± 0%  -0.09% (p=0.001 n=20)
+RegexpMatchEasy1_32     130.6n ± 0%   134.2n ± 1%  +2.72% (p=0.000 n=20)
+RegexpMatchEasy1_1K     1.256µ ± 0%   1.256µ ± 0%       ~ (p=0.190 n=20)
+RegexpMatchMedium_32    1.138µ ± 0%   1.150µ ± 0%  +1.05% (p=0.000 n=20)
+RegexpMatchMedium_1K    33.75µ ± 0%   34.05µ ± 0%  +0.90% (p=0.000 n=20)
+RegexpMatchHard_32      1.683µ ± 0%   1.681µ ± 0%  -0.12% (p=0.000 n=20)
+RegexpMatchHard_1K      50.16µ ± 0%   50.23µ ± 0%  +0.12% (p=0.000 n=20)
+Revcomp                 772.9m ± 0%   727.0m ± 0%  -5.94% (p=0.000 n=20)
+Template                67.70m ± 1%   68.38m ± 4%  +1.01% (p=0.001 n=20)
+TimeParse               336.7n ± 0%   340.8n ± 0%  +1.22% (p=0.000 n=20)
+TimeFormat              354.2n ± 0%   342.7n ± 0%  -3.25% (p=0.000 n=20)
+geomean                 70.12µ        70.22µ       +0.15%
+
+                     |  this CL v4  |             this CL v2              |
+                     |     B/s      |     B/s       vs base               |
+GobDecode              95.03Mi ± 1%   94.91Mi ± 0%       ~ (p=0.151 n=20)
+GobEncode              156.9Mi ± 0%   156.3Mi ± 0%  -0.41% (p=0.001 n=20)
+Gzip                   48.36Mi ± 0%   47.73Mi ± 0%  -1.30% (p=0.000 n=20)
+Gunzip                 335.1Mi ± 0%   334.1Mi ± 0%  -0.30% (p=0.000 n=20)
+JSONEncode             177.2Mi ± 1%   176.3Mi ± 2%       ~ (p=0.095 n=20)
+JSONDecode             30.18Mi ± 0%   31.54Mi ± 0%  +4.50% (p=0.000 n=20)
+GoParse                11.40Mi ± 3%   11.37Mi ± 3%       ~ (p=0.372 n=20)
+RegexpMatchEasy0_32    312.3Mi ± 0%   308.5Mi ± 0%  -1.22% (p=0.000 n=20)
+RegexpMatchEasy0_1K    876.7Mi ± 0%   877.3Mi ± 0%  +0.07% (p=0.010 n=20)
+RegexpMatchEasy1_32    233.6Mi ± 1%   227.4Mi ± 1%  -2.66% (p=0.000 n=20)
+RegexpMatchEasy1_1K    777.8Mi ± 0%   777.3Mi ± 0%  -0.06% (p=0.000 n=20)
+RegexpMatchMedium_32   26.81Mi ± 0%   26.54Mi ± 0%  -1.00% (p=0.000 n=20)
+RegexpMatchMedium_1K   28.93Mi ± 0%   28.68Mi ± 0%  -0.87% (p=0.000 n=20)
+RegexpMatchHard_32     18.13Mi ± 0%   18.16Mi ± 0%  +0.16% (p=0.000 n=20)
+RegexpMatchHard_1K     19.46Mi ± 0%   19.45Mi ± 0%  -0.10% (p=0.000 n=20)
+Revcomp                313.6Mi ± 0%   333.4Mi ± 0%  +6.32% (p=0.000 n=20)
+Template               27.34Mi ± 1%   27.07Mi ± 4%  -0.99% (p=0.001 n=20)
+geomean                90.16Mi        90.21Mi       +0.05%
+
+goos: linux
+goarch: loong64
+pkg: test/bench/go1
+cpu: Loongson-3A6000 @ 2500.00MHz
+                      | this CL v4  |             this CL v2             |
+                      |   sec/op    |   sec/op     vs base               |
+BinaryTree17             7.183 ± 1%    7.244 ± 1%       ~ (p=0.114 n=20)
+Fannkuch11               2.476 ± 0%    2.358 ± 0%  -4.76% (p=0.000 n=20)
+FmtFprintfEmpty         35.87n ± 0%   35.88n ± 0%  +0.03% (p=0.002 n=20)
+FmtFprintfString        56.76n ± 0%   57.57n ± 0%  +1.43% (p=0.000 n=20)
+FmtFprintfInt           60.86n ± 0%   63.44n ± 0%  +4.23% (p=0.000 n=20)
+FmtFprintfIntInt        100.2n ± 0%   101.0n ± 0%  +0.80% (p=0.000 n=20)
+FmtFprintfPrefixedInt   119.7n ± 0%   116.9n ± 0%  -2.34% (p=0.000 n=20)
+FmtFprintfFloat         198.9n ± 0%   200.4n ± 0%  +0.75% (p=0.000 n=20)
+FmtManyArgs             475.9n ± 0%   460.2n ± 0%  -3.29% (p=0.000 n=20)
+GobDecode               6.986m ± 1%   7.003m ± 0%       ~ (p=0.183 n=20)
+GobEncode               8.689m ± 1%   8.686m ± 1%       ~ (p=0.738 n=20)
+Gzip                    267.6m ± 0%   268.5m ± 0%  +0.34% (p=0.000 n=20)
+Gunzip                  31.03m ± 0%   31.78m ± 0%  +2.43% (p=0.000 n=20)
+HTTPClientServer        55.27µ ± 0%   55.55µ ± 0%  +0.51% (p=0.000 n=20)
+JSONEncode              9.050m ± 0%   9.085m ± 1%       ~ (p=0.201 n=20)
+JSONDecode              47.88m ± 0%   48.81m ± 1%  +1.94% (p=0.000 n=20)
+Mandelbrot200           4.609m ± 0%   4.602m ± 0%  -0.15% (p=0.000 n=20)
+GoParse                 4.668m ± 1%   4.712m ± 1%  +0.93% (p=0.008 n=20)
+RegexpMatchEasy0_32     54.46n ± 0%   55.26n ± 0%  +1.47% (p=0.000 n=20)
+RegexpMatchEasy0_1K     593.5n ± 0%   606.6n ± 0%  +2.22% (p=0.000 n=20)
+RegexpMatchEasy1_32     65.23n ± 0%   65.92n ± 0%  +1.05% (p=0.000 n=20)
+RegexpMatchEasy1_1K     702.5n ± 0%   699.1n ± 0%  -0.49% (p=0.000 n=20)
+RegexpMatchMedium_32    764.1n ± 0%   750.4n ± 0%  -1.79% (p=0.000 n=20)
+RegexpMatchMedium_1K    25.76µ ± 0%   25.55µ ± 0%  -0.84% (p=0.000 n=20)
+RegexpMatchHard_32      1.227µ ± 0%   1.207µ ± 0%  -1.63% (p=0.000 n=20)
+RegexpMatchHard_1K      36.88µ ± 0%   36.47µ ± 0%  -1.11% (p=0.000 n=20)
+Revcomp                 453.2m ± 0%   453.6m ± 0%  +0.09% (p=0.000 n=20)
+Template                75.13m ± 0%   74.19m ± 1%  -1.26% (p=0.000 n=20)
+TimeParse               263.7n ± 0%   272.2n ± 0%  +3.22% (p=0.000 n=20)
+TimeFormat              272.7n ± 0%   283.3n ± 0%  +3.91% (p=0.000 n=20)
+geomean                 51.37µ        51.52µ       +0.29%
+
+                     |  this CL v4  |             this CL v2              |
+                     |     B/s      |     B/s       vs base               |
+GobDecode              104.8Mi ± 1%   104.5Mi ± 0%       ~ (p=0.180 n=20)
+GobEncode              84.24Mi ± 1%   84.28Mi ± 1%       ~ (p=0.743 n=20)
+Gzip                   69.15Mi ± 0%   68.91Mi ± 0%  -0.34% (p=0.000 n=20)
+Gunzip                 596.5Mi ± 0%   582.3Mi ± 0%  -2.37% (p=0.000 n=20)
+JSONEncode             204.5Mi ± 0%   203.7Mi ± 1%       ~ (p=0.201 n=20)
+JSONDecode             38.65Mi ± 0%   37.92Mi ± 1%  -1.90% (p=0.000 n=20)
+GoParse                11.83Mi ± 1%   11.73Mi ± 1%  -0.89% (p=0.007 n=20)
+RegexpMatchEasy0_32    560.4Mi ± 0%   552.3Mi ± 0%  -1.45% (p=0.000 n=20)
+RegexpMatchEasy0_1K    1.607Gi ± 0%   1.572Gi ± 0%  -2.18% (p=0.000 n=20)
+RegexpMatchEasy1_32    467.8Mi ± 0%   462.9Mi ± 0%  -1.04% (p=0.000 n=20)
+RegexpMatchEasy1_1K    1.357Gi ± 0%   1.364Gi ± 0%  +0.50% (p=0.000 n=20)
+RegexpMatchMedium_32   39.94Mi ± 0%   40.67Mi ± 0%  +1.83% (p=0.000 n=20)
+RegexpMatchMedium_1K   37.91Mi ± 0%   38.23Mi ± 0%  +0.84% (p=0.000 n=20)
+RegexpMatchHard_32     24.86Mi ± 0%   25.27Mi ± 0%  +1.65% (p=0.000 n=20)
+RegexpMatchHard_1K     26.48Mi ± 0%   26.78Mi ± 0%  +1.12% (p=0.000 n=20)
+Revcomp                534.9Mi ± 0%   534.4Mi ± 0%  -0.09% (p=0.000 n=20)
+Template               24.63Mi ± 0%   24.95Mi ± 1%  +1.28% (p=0.000 n=20)
+geomean                121.3Mi        121.1Mi       -0.22%
